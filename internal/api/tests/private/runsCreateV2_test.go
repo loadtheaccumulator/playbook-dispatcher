@@ -73,14 +73,16 @@ var _ = Describe("runsCreate V2", func() {
 		satId := uuid.New()
 		satOrgId := "123"
 		inventoryId := uuid.New()
+		submanId := uuid.New()
 		satIdString := satId.String()
 
 		payload := ApiInternalV2RunsCreateJSONRequestBody{
 			RunInputV2{
-				Recipient:       public.RunRecipient(recipient),
-				OrgId:           public.OrgId(orgId),
-				Url:             public.Url(url),
-				Hosts:           &RunInputHosts{{InventoryId: &inventoryId}},
+				Recipient: public.RunRecipient(recipient),
+				OrgId:     public.OrgId(orgId),
+				Url:       public.Url(url),
+				Hosts: &RunInputHosts{{InventoryId: &inventoryId,
+					SubscriptionManagerId: &submanId}},
 				Name:            playbookName,
 				WebConsoleUrl:   &playbookRunUrl,
 				Principal:       principal,
@@ -122,14 +124,16 @@ var _ = Describe("runsCreate V2", func() {
 		satId := uuid.New()
 		satOrgId := "123"
 		inventoryId := uuid.New()
+		submanId := uuid.New()
 		satIdString := satId.String()
 
 		payload := ApiInternalV2RunsCreateJSONRequestBody{
 			RunInputV2{
-				Recipient:       public.RunRecipient(recipient),
-				OrgId:           public.OrgId(orgId),
-				Url:             public.Url(url),
-				Hosts:           &RunInputHosts{{InventoryId: &inventoryId}},
+				Recipient: public.RunRecipient(recipient),
+				OrgId:     public.OrgId(orgId),
+				Url:       public.Url(url),
+				Hosts: &RunInputHosts{{InventoryId: &inventoryId,
+					SubscriptionManagerId: &submanId}},
 				Name:            playbookName,
 				WebConsoleUrl:   &playbookRunUrl,
 				Principal:       principal,
@@ -161,15 +165,16 @@ var _ = Describe("runsCreate V2", func() {
 
 		satOrgId := "123"
 		satIdStringV5 := "9274c274-a258-5d00-91fe-dbe0f7849cef"
-
+		submanId := uuid.New()
 		inventoryId := uuid.New()
 
 		payload := ApiInternalV2RunsCreateJSONRequestBody{
 			RunInputV2{
-				Recipient:       public.RunRecipient(recipient),
-				OrgId:           public.OrgId(orgId),
-				Url:             public.Url(url),
-				Hosts:           &RunInputHosts{{InventoryId: &inventoryId}},
+				Recipient: public.RunRecipient(recipient),
+				OrgId:     public.OrgId(orgId),
+				Url:       public.Url(url),
+				Hosts: &RunInputHosts{{InventoryId: &inventoryId,
+					SubscriptionManagerId: &submanId}},
 				Name:            playbookName,
 				WebConsoleUrl:   &playbookRunUrl,
 				Principal:       principal,
@@ -200,15 +205,16 @@ var _ = Describe("runsCreate V2", func() {
 
 		satOrgId := "123"
 		satIdStringV5 := "562daa36-b5d8-5511-8bb2-18095e477978" // mismached sat_id recipient combo
-
+		submanId := uuid.New()
 		inventoryId := uuid.New()
 
 		payload := ApiInternalV2RunsCreateJSONRequestBody{
 			RunInputV2{
-				Recipient:       public.RunRecipient(recipient),
-				OrgId:           public.OrgId(orgId),
-				Url:             public.Url(url),
-				Hosts:           &RunInputHosts{{InventoryId: &inventoryId}},
+				Recipient: public.RunRecipient(recipient),
+				OrgId:     public.OrgId(orgId),
+				Url:       public.Url(url),
+				Hosts: &RunInputHosts{{InventoryId: &inventoryId,
+					SubscriptionManagerId: &submanId}},
 				Name:            playbookName,
 				WebConsoleUrl:   &playbookRunUrl,
 				Principal:       principal,
