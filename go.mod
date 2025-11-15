@@ -1,6 +1,6 @@
 module playbook-dispatcher
 
-go 1.24.5
+go 1.24.8
 
 require (
 	github.com/RedHatInsights/tenant-utils v1.0.0
